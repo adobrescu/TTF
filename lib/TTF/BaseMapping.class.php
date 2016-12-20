@@ -67,9 +67,8 @@ class BaseMapping
 		try
 		{
 			$mapIndex=$this->getConditionsMapIndex($conditionsList);
-			
-			
-			return array('X' => static::$___X[$mapIndex]);
+						
+			return array('X' => static::$___X[$mapIndex], 'Y' => eval('return '.static::$___formulas[$mapIndex].';') );
 		}
 		catch(Exception $err)
 		{

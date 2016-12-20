@@ -21,6 +21,7 @@ class BaseMapping
 	 * @var array $___X used to find "X", conditions -> $___map entry index -> $X
 	 */
 	static protected $___X=array('S', 'R', 'T');
+	protected $mapToX=array( 0 => 0, 1 => 1, 2 => 2); //maps $___map entries to $___X
 	/**
 	 *
 	 * @var array - conditions ->  $___map entry index -> $___formulas index (used with eval)
@@ -30,6 +31,7 @@ class BaseMapping
 			'$params[0] + ($params[0] * ($params[1] - $params[2]) / 100)',
 			'$params[0] - ($params[0] * $params[2] / 100)'
 		);
+	protected $mapToFormula=array( 0 => 0, 1 => 1, 2 => 2); //maps $___map to $___formulas
 	/*
 	 * As the class will work via a web service, it might be possible
 	 * to pass the input directly to the constructor and imediatly do the calculations
@@ -68,7 +70,7 @@ class BaseMapping
 		{
 			$mapIndex=$this->getConditionsMapIndex($conditionsList);
 						
-			return array('X' => static::$___X[$mapIndex], 'Y' => eval('return '.static::$___formulas[$mapIndex].';') );
+			return array('X' => static::$___X[$this->mapToX[$mapIndex]], 'Y' => eval('return '.static::$___formulas[$this->mapToFormula[$mapIndex]].';') );
 		}
 		catch(Exception $err)
 		{

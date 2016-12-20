@@ -18,3 +18,15 @@ catch(\TTF\Exception $err)
 	$this->ASSERT_TRUE_MSG('Exception caught');
 	$this->ASSERT_EQUALS(\TTF\Exception::WRONG_MAXP_INDEX, $err->getCode());
 }
+
+$res=$bm->map(array(true, true, false), array(2,1,3));
+
+$this->ASSERT_EQUALS('S', $res['X']);
+
+$res=$bm->map(array(true, true, true), array(2,1,3));
+
+$this->ASSERT_EQUALS('R', $res['X']);
+
+$res=$bm->map(array(false, true, true), array(2,1,3));
+
+$this->ASSERT_EQUALS('T', $res['X']);

@@ -64,5 +64,15 @@ class BaseMapping
 	 */
 	public function map($conditionsList, $params)
 	{
+		try
+		{
+			$mapIndex=$this->getConditionsMapIndex($conditionsList);
+			
+			
+			return array('X' => static::$___X[$mapIndex]);
+		}
+		catch(Exception $err)
+		{
+		}
 	}
 }

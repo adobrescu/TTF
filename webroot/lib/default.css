@@ -25,16 +25,23 @@ footer
 }
 main
 {
-	padding-bottom: 40px;
+	padding-bottom: 60px;
 }
-input[type="text"]
+input[type="text"],
+input[type="submit"]
 {
 	border: 1px #777777 solid;
 }
 input[type="text"],
+input[type="submit"],
 label
 {
 	line-height: 1.5rem;
+}
+input[type="submit"]
+{
+	border-radius: 3px;
+	margin-top: 12px;
 }
 label,
 input
@@ -55,4 +62,33 @@ input
 	padding-right: 10px;
 	width: 180px;
 	text-align: right;
+}
+form
+{
+	position: relative;
+}
+#message
+{
+	position: absolute;
+	border: 1px #c9c9c9 solid;
+	min-width: 300px;
+	min-height: 60px;
+	background-color: rgba(255, 255, 255, 0.9);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 12px;
+	display: none;
+}
+#close_message_button
+{
+	position: absolute;
+	bottom: 8px;
+	left: 50%;
+	transform: translate(-50%, 0)
+}
+#message.error
+{
+	color: red;
+	background-color: rgba(255, 255, 221, 0.9);
 }

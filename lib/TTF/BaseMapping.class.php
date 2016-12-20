@@ -71,8 +71,8 @@ class BaseMapping
 			$mapIndex=$this->getConditionsMapIndex($conditionsList);
 			$xIndex=$this->mapToX[$mapIndex];
 			$formulaIndex=$this->xToFormula[$xIndex];
-						
-			return array('X' => static::$___X[$xIndex], 'Y' => eval('return '.static::$___formulas[$this->xToFormula[$formulaIndex]].';') );
+			
+			return array('X' => static::$___X[$xIndex], 'Y' => eval('return '.static::$___formulas[$formulaIndex].';') );
 		}
 		catch(Exception $err)
 		{

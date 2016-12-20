@@ -1,0 +1,6 @@
+
+
+1. Write the base mapping class (BaseMapping) with tests
+2. Extend the base class with SpecializedMapping1 and SpecializedMapping2 (again with tests)
+3. Write a little HTML form that allows user input of A, B and C
+4. XHR -> web service -> json back to the client (manual testing)

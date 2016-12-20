@@ -1,0 +1,14 @@
+
+
+Write a liitle PHP app that meets the needes as they are specified in assignment.pdf.
+
+
+What's needed:
+
+1. A model (it does the calculations as per request)
+2. A simple web service style architecure.
+3. A simple HTML/JavaScript that expose the functionalities to the user.
+1'. Simple unit testing to check the math.
+
+Play around
+

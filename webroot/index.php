@@ -2,6 +2,7 @@
 
 $numConditions=3;
 $numParams=3;
+$services=array('Base Mapping', 'Specilized Mapping 1', 'Specilized Mapping 2');
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ $numParams=3;
 			<h1>TTF App</h1>
 		</header>
 		<main>
-		<form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" onsubmit="return false">
+		<form action="web-service.php" method="post" enctype="multipart/form-data" onsubmit="return false">
 			<h2>Conditions</h2>
 			<div class="clearfix">
 <?php
@@ -26,7 +27,8 @@ $numParams=3;
 ?>
 			<div class="clearfix form-field-inline">
 				<label for="condition_<?=$i?>"><?=chr(65+$i)?></label>
-				<input type="checkbox" name="conditions[]" id="condition_<?=$i?>">
+				<input type="hidden" name="conditions[<?=$i?>]" value="0">
+				<input type="checkbox" name="conditions[<?=$i?>]" id="condition_<?=$i?>">
 			</div>
 <?php
 			}
@@ -44,7 +46,21 @@ $numParams=3;
 <?php
 			}
 ?>
-			<input type="submit" name="cmd_x" value="Submit">
+			<h2>Mapping Type</h2>
+			<div class="clearfix form-field">
+				<label for="service">Choose the mapping type:</label>
+				<select name="service" id="service">
+<?php
+			foreach( $services as $serviceId=>$service)
+			{
+?>
+					<option value="<?=$service?>"><?=$service?></option>
+<?php
+			}
+?>
+				</select>
+			</div>
+			<input type="submit" name="cmd_x" value="Submit" onclick="sendForm(this)">
 		</form>
 		</main>
 		<footer>

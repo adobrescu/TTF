@@ -53,4 +53,6 @@ input
 .form-field label
 {
 	padding-right: 10px;
+	width: 180px;
+	text-align: right;
 }

@@ -39,6 +39,14 @@ class BaseMapping
 	{
 	}
 	/**
+	 * getConditionsMapIndex - finds map index that meets $conditionsList
+	 * 
+	 * @param type $conditionsList
+	 */
+	public function getConditionsMapIndex($conditionsList)
+	{
+	}
+	/**
 	 * 
 	 * @param type $conditionsList - list of booleans based on which the calcs are done
 	 * @param type $params - list of params involved in the calcs

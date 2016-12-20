@@ -1,11 +1,56 @@
 
 body
 {
+	font-size: 1rem;
+}
+.clearfix:after
+{
+	 clear: both;
+	 content: ".";
+	 display: block;
+	 height: 0;
+	 visibility: hidden;
 }
 header,
 main,
 footer
 {
 	margin: 0 auto;
-	max-width: 1024px;
+	max-width: 600px;
+	border-bottom: 1px #c9c9c9 solid;
+}
+footer
+{
+	min-height: 40px;
+}
+main
+{
+	padding-bottom: 40px;
+}
+input[type="text"]
+{
+	border: 1px #777777 solid;
+}
+input[type="text"],
+label
+{
+	line-height: 1.5rem;
+}
+label,
+input
+{
+	float: left;
+}
+.form-field
+{
+	margin-bottom: 1rem;
+}
+.form-field-inline
+{
+	float: left;
+	margin-right: 18px;
+}
+.form-field label
+{
+	padding-right: 10px;
 }

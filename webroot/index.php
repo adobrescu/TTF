@@ -19,23 +19,25 @@ $numParams=3;
 		<main>
 		<form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" onsubmit="return false">
 			<h2>Conditions</h2>
+			<div class="clearfix">
 <?php
 			for($i=0; $i<$numConditions; $i++)
 			{
 ?>
-			<div class="clearfix">
+			<div class="clearfix form-field-inline">
 				<label for="condition_<?=$i?>"><?=chr(65+$i)?></label>
 				<input type="checkbox" name="conditions[]" id="condition_<?=$i?>">
 			</div>
 <?php
 			}
 ?>
+			</div>
 			<h2>Parameters</h2>
 <?php
 			for($i=0; $i<$numParams; $i++)
 			{
 ?>
-			<div class="clearfix">
+			<div class="clearfix form-field">
 				<label for="param_<?=$i?>"><?=chr(68+$i)?></label>
 				<input type="text" name="param[]" id="param_<?=$i?>" placeholder="Enter numeric value for <?=chr(68+$i)?>">
 			</div>

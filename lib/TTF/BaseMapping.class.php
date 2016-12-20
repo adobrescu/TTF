@@ -45,6 +45,15 @@ class BaseMapping
 	 */
 	public function getConditionsMapIndex($conditionsList)
 	{
+		$mapSize=count(static::$___map);
+		for($i=0; $i<$mapSize; $i++)
+		{
+			if(static::$___map[$i]==$conditionsList)
+			{
+				return $i;
+			}
+		}
+		//exception
 	}
 	/**
 	 * 

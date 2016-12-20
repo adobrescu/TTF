@@ -2,6 +2,8 @@
 
 namespace TTF;
 
+include_once(__DIR__.'/BaseMapping.class.php');
+
 class SpecializedMapping1 extends BaseMapping
 {
 	public function __construct()

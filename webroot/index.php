@@ -19,6 +19,10 @@ $services=array('Base Mapping', 'Specilized Mapping 1', 'Specilized Mapping 2');
 		</header>
 		<main>
 		<form action="web-service.php" method="post" enctype="multipart/form-data" onsubmit="return false">
+			<div id="message">
+				<span id="message_text"></span>
+				<a href="#" onclick="closeMessage(); return false;" id="close_message_button">Ok</a>
+			</div>
 			<h2>Conditions</h2>
 			<div class="clearfix">
 <?php
@@ -28,7 +32,7 @@ $services=array('Base Mapping', 'Specilized Mapping 1', 'Specilized Mapping 2');
 			<div class="clearfix form-field-inline">
 				<label for="condition_<?=$i?>"><?=chr(65+$i)?></label>
 				<input type="hidden" name="conditions[<?=$i?>]" value="0">
-				<input type="checkbox" name="conditions[<?=$i?>]" id="condition_<?=$i?>">
+				<input type="checkbox" name="conditions[<?=$i?>]" id="condition_<?=$i?>" value="1">
 			</div>
 <?php
 			}
@@ -54,7 +58,7 @@ $services=array('Base Mapping', 'Specilized Mapping 1', 'Specilized Mapping 2');
 			foreach( $services as $serviceId=>$service)
 			{
 ?>
-					<option value="<?=$service?>"><?=$service?></option>
+					<option value="<?=$serviceId?>"><?=$service?></option>
 <?php
 			}
 ?>

@@ -28,20 +28,27 @@ main
 	padding-bottom: 60px;
 }
 input[type="text"],
-input[type="submit"]
+input[type="submit"],
+input[type="reset"]
 {
 	border: 1px #777777 solid;
 }
 input[type="text"],
 input[type="submit"],
+input[type="reset"],
 label
 {
 	line-height: 1.5rem;
 }
-input[type="submit"]
+input[type="submit"],
+input[type="reset"]
 {
 	border-radius: 3px;
 	margin-top: 12px;
+}
+input[type="submit"]
+{
+	margin-right: 16px;
 }
 label,
 input

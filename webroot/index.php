@@ -65,6 +65,7 @@ $services=array('Base Mapping', 'Specilized Mapping 1', 'Specilized Mapping 2');
 				</select>
 			</div>
 			<input type="submit" name="cmd_x" value="Submit" onclick="sendForm(this)">
+			<input type="reset" value="Reset"> 
 		</form>
 		</main>
 		<footer>

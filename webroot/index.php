@@ -1,3 +1,9 @@
+<?php
+
+$numConditions=3;
+$numParams=3;
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,6 +13,39 @@
 		<script type="text/javascript" src="lib/default.js"></script>
 	</head>
 	<body>
-		
+		<header>
+			<h1>TTF App</h1>
+		</header>
+		<main>
+		<form action="<?=$_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" onsubmit="return false">
+			<h2>Conditions</h2>
+<?php
+			for($i=0; $i<$numConditions; $i++)
+			{
+?>
+			<div class="clearfix">
+				<label for="condition_<?=$i?>"><?=chr(65+$i)?></label>
+				<input type="checkbox" name="conditions[]" id="condition_<?=$i?>">
+			</div>
+<?php
+			}
+?>
+			<h2>Parameters</h2>
+<?php
+			for($i=0; $i<$numParams; $i++)
+			{
+?>
+			<div class="clearfix">
+				<label for="param_<?=$i?>"><?=chr(68+$i)?></label>
+				<input type="text" name="param[]" id="param_<?=$i?>" placeholder="Enter numeric value for <?=chr(68+$i)?>">
+			</div>
+<?php
+			}
+?>
+			<input type="submit" name="cmd_x" value="Submit">
+		</form>
+		</main>
+		<footer>
+		</footer>
 	</body>
 </html>

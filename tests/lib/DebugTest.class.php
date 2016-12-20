@@ -236,7 +236,7 @@ class DebugTest
 			}
 		}
 	}
-	public function ASSERT_MSG($msg)
+	public function ASSERT_FALSE_MSG($msg)
 	{
 		return $this->ASSERT(false, null, null, $msg);
 	}

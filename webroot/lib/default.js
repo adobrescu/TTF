@@ -16,5 +16,7 @@ function onResponseLoaded(xhr)
 	{
 		return;
 	}
-	alert(xhr.responseText);
+	var response=JSON.parse(xhr.responseText);
+	
+	console.log(response);
 }

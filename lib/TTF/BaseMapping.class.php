@@ -57,7 +57,7 @@ class BaseMapping
 			}
 		}
 		//exception
-		throw new Exception('No map entry found thet meets the conditions', Exception::WRONG_MAXP_INDEX);
+		throw new Exception('No map entry found that meets the conditions', Exception::WRONG_MAXP_INDEX);
 	}
 	/**
 	 * 
@@ -76,6 +76,7 @@ class BaseMapping
 		}
 		catch(Exception $err)
 		{
+			throw $err;
 		}
 	}
 }

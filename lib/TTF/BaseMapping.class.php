@@ -31,7 +31,7 @@ class BaseMapping
 			'$params[0] + ($params[0] * ($params[1] - $params[2]) / 100)',
 			'$params[0] - ($params[0] * $params[2] / 100)'
 		);
-	protected $mapToFormula=array( 0 => 0, 1 => 1, 2 => 2); //maps $___map to $___formulas
+	protected $xToFormula=array( 0 => 0, 1 => 1, 2 => 2); //maps $___X to $___formulas
 	/*
 	 * As the class will work via a web service, it might be possible
 	 * to pass the input directly to the constructor and imediatly do the calculations
@@ -69,8 +69,10 @@ class BaseMapping
 		try
 		{
 			$mapIndex=$this->getConditionsMapIndex($conditionsList);
+			$xIndex=$this->mapToX[$mapIndex];
+			$formulaIndex=$this->xToFormula[$xIndex];
 						
-			return array('X' => static::$___X[$this->mapToX[$mapIndex]], 'Y' => eval('return '.static::$___formulas[$this->mapToFormula[$mapIndex]].';') );
+			return array('X' => static::$___X[$xIndex], 'Y' => eval('return '.static::$___formulas[$this->xToFormula[$formulaIndex]].';') );
 		}
 		catch(Exception $err)
 		{
